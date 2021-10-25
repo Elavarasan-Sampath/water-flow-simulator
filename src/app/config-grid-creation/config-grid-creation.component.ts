@@ -24,6 +24,10 @@ export class ConfigGridCreationComponent implements OnInit {
   }
 
   goToSimulator = () => {
-    this.router.navigate(['/simulation']);
+    this.router.navigate(['/simulation'], { state : {
+      noOfRows : this.configForm.controls.rows.value,
+      noOfColumns : this.configForm.controls.columns.value,
+      noOfObstructions : this.configForm.controls.obstructions.value
+    }});
   }
 }
