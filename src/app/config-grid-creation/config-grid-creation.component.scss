@@ -19,7 +19,7 @@
   input[type=range] {
     -webkit-appearance: none; 
     width: 100%; 
-    background: var(--data-color-transparent);
+    background: transparent;
     position: relative;
   }
   
@@ -42,7 +42,7 @@
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 10px solid var(--data-range-thumb);
+    border-top: 10px solid #424242;
     cursor: pointer;
     margin-top: -5px; 
   }
@@ -52,6 +52,6 @@
     height: 2px;
     cursor: pointer;
     border-radius: 1px;
-    border: 0.2px solid var(--data-range-border);
+    border: 0.2px solid #9E9E9E;
   }
 }

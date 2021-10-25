@@ -1,1 +1,22 @@
-<p>simulate-waterflow works!</p>
+<p>Drag the obstructions and place it inside the grid.</p>
+<div class="simulation-cont">
+  <div class="grid-container">
+    <ng-container *ngFor="let row of gridCells; let firstRow = first; let lastRow = last">
+      <div class="row" *ngIf="!firstRow || (firstRow && showSimulationStart)">
+        <div class="cell" [ngClass]="{'flow': cell.flow, 'blocked': cell.blocked , 'start-row': firstRow, 'last-row': lastRow}" *ngFor="let cell of row" (drop)="drop($event)" (dragover)="allowDrop($event)"
+        [attr.rowIndex]="cell.rowIndex" [attr.colIndex]="cell.colIndex" (click)="firstRow ? startFlowSimulation(cell) : null">
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="block-container">
+    <div class="block" [ngClass]="{'moved': block.moved}" *ngFor="let block of gridBlocks" [draggable]="!block.moved" (dragstart)="dragStart($event, block)"></div>
+  </div>
+</div>
+
+<div>
+  <button routerLink="/config">Back</button>
+  <button *ngIf="!showSimulationStart" [disabled]="checkAllblocksMoved()" (click)="startSimulation()">Start simulation</button>
+  <button *ngIf="showSimulationStart" (click)="resetBlocks()">Reset</button>
+</div>

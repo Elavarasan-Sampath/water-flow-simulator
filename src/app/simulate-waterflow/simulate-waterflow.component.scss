@@ -1,0 +1,61 @@
+.simulation-cont{
+  display: flex;
+  margin: 50px 0px 100px;
+  .grid-container{
+    display: inline-block;
+    border: 1px solid black;
+  }
+  .row {
+    display: flex;
+  }
+  .cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+  }
+  .blocked{
+    background-color: gray;
+  }
+  .start-row{
+    background-color: #c1ddf5;
+    border: 1px solid #3b89fe;
+  }
+  .flow{
+    background-color: rgb(63, 63, 197);
+  }
+  .flow.last-row::after{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(63, 63, 197);
+    position: relative;
+    top: 52px;
+    left: 0px;
+    content: '';
+  }
+
+  .block-container{
+    margin-left: 100px;
+    display: flex;
+    width: 120px;
+    flex-wrap: wrap;
+    margin-bottom: auto;
+    .block-bg{    
+      width: 50px;
+      height: 50px;
+      background-color: gray;
+    }
+    .block{
+      cursor: grab;
+      margin: 0px 10px 10px 0px;
+      width: 50px;
+      height: 50px;
+      background-color: gray;
+    }
+    .moved{
+      background-color: rgb(212, 212, 212);
+    }
+  }
+}

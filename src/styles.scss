@@ -1,15 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-:root {
-    --data-button-bg: #BDBDBD;
-    --data-range-border: #9E9E9E;
-    --data-range-thumb: #424242;
-    --data-color-transparent: transparent;
-    --data-node-wall: #424242;
-    --data-block-container: #BDBDBD;
-    --data-node-visited: #2962FF;
-    --data-row-first-child: #E3F2FD;
-    --data-row-outline: #42A5F5;
-}
 body {
     margin: 50px 100px;
+    button{
+      margin-right: 20px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
 }
