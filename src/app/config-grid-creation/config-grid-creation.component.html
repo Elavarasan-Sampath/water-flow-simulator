@@ -1,0 +1,16 @@
+<h2>Grid Creation</h2>
+<form class="form-container" [formGroup]="configForm">
+    <div class="form-field">
+        <label>Number of Rows: {{configForm?.controls.rows.value}}</label>
+        <input type="range" data-min="1" data-max="10" min="1" max="10" step="1" formControlName="rows">
+    </div>
+    <div class="form-field">
+        <label>Number of Columns: {{configForm?.controls.columns.value}}</label>
+        <input type="range" data-min="1" data-max="10" min="1" max="10" step="1" formControlName="columns">
+    </div>
+    <div class="form-field">
+        <label>Number of Obstructions: {{configForm?.controls.obstructions.value}}</label>
+        <input type="range" data-min="1" data-max="10" min="1" max="10" step="1" formControlName="obstructions">
+    </div>
+</form>
+<button (click)="goToSimulator()"> Next </button>
